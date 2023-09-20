@@ -1,7 +1,7 @@
 
 
 const findCollection = async (address) => {
-    // const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
     // const rateLimitedAsyncFunc = async (owner, amount) => {
     //     while (true) { // keep trying until successful or non 429 error
@@ -33,10 +33,9 @@ const findCollection = async (address) => {
 
     try {
         const rawCollection = await fetch(`https://api.shyft.to/sol/v1/collections/get_nfts?network=mainnet-beta&collection_address=${address}&page=26&size=15`, requestOptions)
-        console.log(rawCollection.headers)
         const jsonCollection =  await rawCollection.json();
         const nftsOfCollection = await jsonCollection.result?.nfts;
-        // const totalPages = await jsonCollection.result?.total_pages;
+        const totalPages = await jsonCollection.result?.total_pages;
         
 
         if(nftsOfCollection === undefined){
@@ -47,32 +46,32 @@ const findCollection = async (address) => {
 
 
 
-        // let allNFTs = [];
+        let allNFTs = [];
 
-        // for (let page = 1; page <= totalPages; page++) {
-        //          await sleep(2000);
+        for (let page = 1; page <= totalPages; page++) {
+                await sleep(1000)
                  
-                 
-        //          const rawPageResponse = await fetch(`https://api.shyft.to/sol/v1/collections/get_nfts?network=mainnet-beta&collection_address=${address}&page=${page}&size=15`, requestOptions);
-        //          const jsonPageData = await rawPageResponse?.json();
-        //          const nfts = await jsonPageData.result?.nfts;
-        //          allNFTs = allNFTs.concat(nfts);
-                 
-        //          await sleep(2000);
+                 console.log("started")
+                const rawPageResponse = await fetch(`https://api.shyft.to/sol/v1/collections/get_nfts?network=mainnet-beta&collection_address=${address}&page=${page}&size=30`, requestOptions);
+                const jsonPageData = await rawPageResponse?.json();
+                const nfts = await jsonPageData.result?.nfts;
+                allNFTs = allNFTs.concat(nfts);
+                
+                
+            }
+            
+            
+            console.log(allNFTs)
 
-        // }
-
-        // console.log(allNFTs); // This should print all the NFTs
-
-        // console.log(nftsOfCollection) 
-        // console.log(totalPages)
+        console.log(nftsOfCollection) 
+        console.log(totalPages)
         
     } catch (err) {
         console.error(err)
     }
 
 }
-findCollection("8A6NtZj2gJKTHuiCjoPhkXGWDb3FK4v7DAsq9GhtwAZx")
+
 export { 
     findCollection 
 }
