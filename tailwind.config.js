@@ -9,6 +9,9 @@ export default {
       body: ["Open Sans", "sans-serif"],
     },
     extend: {
+      colors: {
+        'trans': 'white',
+      },
       screens: {
         mf: "990px",
       },
