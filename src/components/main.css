@@ -1,0 +1,9 @@
+#copy{
+    transition: .2s ease-in-out;
+    filter: invert(90%) sepia(1%) saturate(1109%) hue-rotate(324deg) brightness(89%) contrast(74%);
+}
+
+#copy:hover{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(290deg) brightness(102%) contrast(105%);
+    transform: scale(1.1);
+}
