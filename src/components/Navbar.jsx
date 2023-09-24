@@ -1,8 +1,5 @@
 import { logo } from '../assets'
 
-
-// import { findCollection } from './findFunction.js';
-
 const Navbar = () => {
 
     

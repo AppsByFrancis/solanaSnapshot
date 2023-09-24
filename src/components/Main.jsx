@@ -9,8 +9,8 @@ import { copy } from '../assets'
 const Main = ({ data }) => {
 
         return(
-            <div className='flex items-center justify-center'>
-                <div className='grid w-full m-auto gap-10 p-10 overflow-hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 3xl:grid-cols-8'>
+            <div id="mainSection" className='flex items-center justify-center md:p-20 mt-20'>
+                <div className='grid w-full m-auto gap-5 p-10 overflow-hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 3xl:grid-cols-8'>
                     {data.map((item, index) => {
                         return(
                             
