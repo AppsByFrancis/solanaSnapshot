@@ -2,9 +2,27 @@ import { useState } from "react";
 import PropTypes from 'prop-types';
 
 
+
 const Search = ({  onChildClick, disabled }) => {
     const [ searchInput, setSearchInput ] = useState("")
-
+    // useEffect(() => {
+    //     const searchClick = document.getElementById('searchQueryInput');
+    //     const handleClick = () => {
+    //         if(Event.key === "Enter"){
+    //             Event.preventDefault();
+    //             document.getElementById('searchQuerySubmit').click()
+    //         }
+    //     };
+    
+    //     searchClick.addEventListener('click', handleClick);
+    
+    //     // Cleanup: remove the event listener when the component is unmounted
+    //     return () => {
+    //       searchClick.removeEventListener('click', handleClick);
+    //     };
+    //   }, []);  
+      
+      
 
     return(
             <div id="searchDiv" className="mt-20 flex w-full justify-center items-center opacity-0 ease-in-out duration-700">

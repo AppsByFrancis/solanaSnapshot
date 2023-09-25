@@ -17,8 +17,8 @@ const Main = ({ data }) => {
                             
                             <div className="box-border border-2 border-[#767676] pb-3 rounded-2xl" key={index}>
                                 <LazyLoadImage src={item.image_uri}
-                                width={"100%"} height={"auto"}
                                 placeholderSrc={placeholder}
+                                width={"100%"} height={"auto"}
                                 effect="blur"
                                 className='rounded-2xl'
                                 />
