@@ -6,8 +6,6 @@ import Loader from './Loader.jsx'
 import groupByOwner from './groupByOwner.js'
 import Download from './Download.jsx'
 
-
-
 export {
     Navbar,
     Main,
@@ -16,5 +14,4 @@ export {
     Loader,
     groupByOwner,
     Download,
-    
 }

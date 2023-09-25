@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import FileDownload from 'js-file-download';
 
-
 function Download ({ data }) {
     const download = async () => {
         await FileDownload(JSON.stringify(data), 'data.json' ) 
@@ -17,6 +16,5 @@ function Download ({ data }) {
 Download.propTypes = {
     data: PropTypes.array
 };
-
 
 export default Download;

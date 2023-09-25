@@ -139,6 +139,3 @@ const findCollection = async (address, retryCount = 0) => {
 }
 
 export default App;
-
-
-
