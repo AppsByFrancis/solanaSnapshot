@@ -1,7 +1,7 @@
 import './loader.css'
 import PropTypes from 'prop-types'
 
-const Loader = ({totalPages, page}) => {
+const Loader = ({ totalPages, page }) => {
     return(
         <>  
             <div className="lds-roller absolute w-[100px] mt-3 flex justify-center right-[50%]"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>

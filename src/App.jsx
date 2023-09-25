@@ -12,7 +12,7 @@ const App = () => {
   const [downloadUrl, setDownloadUrl] = useState(null);
 
 
-///
+
   useEffect(() => {
       const triggerBottom = window.innerHeight / 4;
       const mainSection = document.getElementById('mainSection');
@@ -43,7 +43,7 @@ const App = () => {
   }, [dataArray]);
 
 
-  ///
+
 const findCollection = async (address, retryCount = 0) => {
   setLoader(true)
 
@@ -60,7 +60,7 @@ const findCollection = async (address, retryCount = 0) => {
 
   
   try {
-    const rawCollection = await fetch(`https://api.shyft.to/sol/v1/collections/get_nfts?network=mainnet-beta&collection_address=${address}&page=1&size=80`, requestOptions)
+    const rawCollection = await fetch(`https://api.shyft.to/sol/v1/collections/get_nfts?network=mainnet-beta&collection_address=${address}&page=1&size=80`, requestOptions);
     const jsonCollection = await rawCollection.json();
     const nftsOfCollection = jsonCollection.result?.nfts;
     const totalPages =  jsonCollection.result?.total_pages;
@@ -86,13 +86,13 @@ const findCollection = async (address, retryCount = 0) => {
     for (let page = 1; page <= totalPages; page++) {
       await sleep(1000)
       
-      console.log("started")
+
       const rawPageResponse = await fetch(`https://api.shyft.to/sol/v1/collections/get_nfts?network=mainnet-beta&collection_address=${address}&page=${page}&size=80`, requestOptions);
       const jsonPageData = await rawPageResponse?.json();
       const nfts = await jsonPageData.result?.nfts;
       allNFTs = allNFTs.concat(nfts);
       
-      console.log(`Fetch: ${page}`)
+
       setPage(`${page}`)
       setDataArray([allNFTs])
     }
@@ -117,7 +117,7 @@ const findCollection = async (address, retryCount = 0) => {
         }
         
       }
-    ///
+
   return (
     <div className='min-h-screen'>
       <div className='gradient-bg-welcome'>

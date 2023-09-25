@@ -1,10 +1,10 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import PropTypes from 'prop-types';
-import './main.css'
+import './main.css';
 import { placeholder } from '../assets';
 
-import { copy } from '../assets'
+import { copy } from '../assets';
 
 
 const Main = ({ data }) => {
@@ -35,7 +35,6 @@ const Main = ({ data }) => {
                                 </div>
                             </div> 
                         )
-
                     })}
                 </div>
             </div>

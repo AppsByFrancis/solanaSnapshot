@@ -4,7 +4,7 @@ import FileDownload from 'js-file-download';
 
 function Download ({ data }) {
     const download = async () => {
-        await FileDownload(JSON.stringify(data), 'data.txt' ) // DOESNT WORK PROPERLY WHEN data.json
+        await FileDownload(JSON.stringify(data), 'data.json' ) 
         console.log(data)
     }
 
