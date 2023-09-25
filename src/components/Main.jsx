@@ -2,6 +2,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import PropTypes from 'prop-types';
 import './main.css'
+import { placeholder } from '../assets';
 
 import { copy } from '../assets'
 
@@ -17,6 +18,7 @@ const Main = ({ data }) => {
                             <div className="box-border border-2 border-[#767676] pb-3 rounded-2xl" key={index}>
                                 <LazyLoadImage src={item.image_uri}
                                 width={"100%"} height={"auto"}
+                                placeholderSrc={placeholder}
                                 effect="blur"
                                 className='rounded-2xl'
                                 />
