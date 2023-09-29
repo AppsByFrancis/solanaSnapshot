@@ -21,11 +21,11 @@ const App = () => {
       const searchDiv = document.getElementById('searchDiv');
 
       const expand = () => {
-        
+
         if(extendDiv.getBoundingClientRect().top < triggerBottom){
-          mainSection.classList.remove('md:p-20')
+          mainSection?.classList.remove('md:p-20')
         } else {
-          mainSection.classList.add('md:p-20')
+          mainSection?.classList.add('md:p-20')
         }
        
     }
